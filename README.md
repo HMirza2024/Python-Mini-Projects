@@ -21,3 +21,13 @@ A simple GUI-based To-Do List application built using Python and Tkinter.
 - Delete tasks once they are completed.
 - Simple and intuitive user interface.
 
+
+# Snake Water Gun Game
+
+A fun and interactive Python game where you play against the computer in a classic "Snake, Water, Gun" challenge.
+
+## Rules
+- Snake beats Water.
+- Water beats Gun.
+- Gun beats Snake.
+
