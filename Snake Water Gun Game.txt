@@ -1,0 +1,57 @@
+import random
+
+def game():
+    # Initialize the game
+    print("Welcome to Snake, Water, and Gun Game!")
+    print("Rules: Snake beats Water, Water beats Gun, Gun beats Snake.")
+    
+    # Game options
+    options = ["snake", "water", "gun"]
+    
+    # Initialize scores
+    player_score = 0
+    computer_score = 0
+    
+    # Number of rounds
+    rounds = 5
+    
+    for round in range(1, rounds + 1):
+        print(f"\nRound {round}:")
+        
+        # User's choice
+        player_choice = input("Enter your choice (snake/water/gun): ").lower()
+        while player_choice not in options:
+            print("Invalid choice! Please choose again.")
+            user_choice = input("Enter your choice (snake/water/gun): ").lower()
+        
+        # Computer's choice
+        computer_choice = random.choice(options)
+        print(f"Computer chose: {computer_choice}")
+        
+        # Determine the winner of the round
+        if player_choice == computer_choice:
+            print("It's a tie!")
+        elif (player_choice == "snake" and computer_choice == "water") or \
+             (player_choice == "water" and computer_choice == "gun") or \
+             (player_choice == "gun" and computer_choice == "snake"):
+            print("You win this round!")
+            player_score += 1
+        else:
+            print("Computer wins this round!")
+            computer_score += 1
+    
+    # Display final results
+    print("\nGame Over!")
+    print(f"Your score: {player_score}")
+    print(f"Computer's score: {computer_score}")
+    
+    if player_score > computer_score:
+        print("Congratulations! You won the game!")
+    elif player_score < computer_score:
+        print("Oops! Computer won the game!")
+    else:
+        print("It's a tie overall!")
+
+# Run the game
+if __name__ == "__main__":
+    game()
